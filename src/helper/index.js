@@ -40,8 +40,17 @@ export const listField = 'list'; // 名单
 export function conversionCategoryName(key) {
   let name = '';
   switch (key) {
+    case 'superPrize':
+      name = '特等奖';
+      break;
     case 'firstPrize':
       name = '一等奖';
+      break;
+    case 'secondPrize':
+      name = '二等奖';
+      break;
+    case 'thirdPrize':
+      name = '三等奖';
       break;
     default:
       break;

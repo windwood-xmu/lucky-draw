@@ -9,28 +9,37 @@ import {
 
 Vue.use(Vuex);
 
+let initConfig = {
+  name: '春节团拜抽奖',
+  number: 300,
+  superPrize: 2,
+  firstPrize: 10,
+  secondPrize: 40,
+  thirdPrize: 80
+};
+
+let initResult = {
+  superPrize: []
+};
+
+let initLottery = [
+  { key: 'firstPrize', name: '一等奖' },
+  { key: 'secondPrize', name: '二等奖' },
+  { key: 'thirdPrize', name: '三等奖' }
+];
+
 export default new Vuex.Store({
   state: {
-    config: {
-      name: '年会抽奖',
-      number: 70,
-      firstPrize: 1
-    },
-    result: {
-      firstPrize: []
-    },
-    newLottery: [],
+    config: initConfig,
+    result: initResult,
+    newLottery: initLottery,
     list: [],
     photos: []
   },
   mutations: {
     setClearConfig(state) {
-      state.config = {
-        name: '年会抽奖',
-        number: 70,
-        firstPrize: 1
-      };
-      state.newLottery = [];
+      state.config = initConfig;
+      state.newLottery = initLottery;
     },
     setClearList(state) {
       state.list = [];
@@ -39,22 +48,13 @@ export default new Vuex.Store({
       state.photos = [];
     },
     setClearResult(state) {
-      state.result = {
-        firstPrize: []
-      };
+      state.result = initResult;
     },
     setClearStore(state) {
-      state.config = {
-        name: '年会抽奖',
-        number: 70,
-        firstPrize: 1
-      };
-      state.result = {
-        firstPrize: []
-      };
-      state.newLottery = [];
-      state.list = [];
-      state.photos = [];
+      this.setClearConfig(state);
+      this.setClearList(state);
+      this.setClearPhotos(state);
+      this.setClearResult(state);
     },
     setConfig(state, config) {
       state.config = config;

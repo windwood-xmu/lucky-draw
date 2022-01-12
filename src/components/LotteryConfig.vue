@@ -31,10 +31,10 @@
             :step="1"
           ></el-input>
         </el-form-item>
-        <el-form-item label="一等奖">
+        <el-form-item label="特等奖">
           <el-input
             type="number"
-            v-model="form.firstPrize"
+            v-model="form.superPrize"
             :min="0"
             :step="1"
           ></el-input>
