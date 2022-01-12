@@ -16,7 +16,7 @@
           <a
             href="javascript:void(0);"
             :style="{
-              color: '#fff',
+              color: 'gold',
             }"
           >
             {{ item.name ? item.name : item.key }}
@@ -46,7 +46,7 @@
               <span
                 v-if="!!list.find((d) => d.key === item)"
                 :style="{
-                  fontSize: '40px',
+                  fontSize: '40px', color: 'goldenrod'
                 }"
               >
                 {{ list.find((d) => d.key === item).name }}
@@ -93,7 +93,7 @@
     <Result :visible.sync="showResult"></Result>
 
     <span class="copy-right">
-      Copyright©zhangyongfeng5350@gmail.com
+      gh://windwood-xmu/lucky-draw
     </span>
 
     <audio
@@ -137,11 +137,11 @@ export default {
       const style = { fontSize: '30px' };
       const { number } = this.config;
       if (number < 100) {
-        style.fontSize = '100px';
-      } else if (number < 1000) {
         style.fontSize = '80px';
-      } else if (number < 10000) {
+      } else if (number < 1000) {
         style.fontSize = '60px';
+      } else if (number < 10000) {
+        style.fontSize = '40px';
       }
       return style;
     },
@@ -374,7 +374,7 @@ export default {
 #root {
   height: 100%;
   position: relative;
-  background-image: url('./assets/bg1.jpg');
+  background-image: url('./assets/newyear.jpg');
   background-size: 100% 100%;
   background-position: center center;
   background-repeat: no-repeat;
@@ -434,6 +434,10 @@ export default {
   height: 100%;
 }
 
+#tags li>a {
+  color: gold;
+}
+
 #resbox {
   position: absolute;
   top: 50%;
@@ -442,7 +446,7 @@ export default {
   transform: translateX(-50%) translateY(-50%);
   text-align: center;
   p {
-    color: red;
+    color: white;
     font-size: 50px;
     line-height: 120px;
   }
@@ -453,14 +457,14 @@ export default {
   }
   .itemres {
     background: #fff;
-    width: 160px;
-    height: 160px;
+    width: 200px;
+    height: 150px;
     border-radius: 4px;
     border: 1px solid #ccc;
     line-height: 160px;
     font-weight: bold;
-    margin-right: 20px;
-    margin-bottom: 20px;
+    margin-right: 32px;
+    margin-bottom: 16px;
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -477,10 +481,11 @@ export default {
       height: 22px;
       line-height: 22px;
       background-color: #fff;
+      color: goldenrod;
       position: absolute;
-      bottom: 0;
-      left: 0;
-      font-size: 14px;
+      bottom: 12px;
+      left: 80px;
+      font-size: 24px;
       // border-radius: 50%;
       z-index: 1;
     }

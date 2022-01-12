@@ -70,14 +70,14 @@ export default {
     color: #fff;
     font-size: 16px;
     .title {
-      color: #ccc;
+      color: gold;
     }
     .value {
       margin-left: 10px;
     }
     &.actiname {
       .title {
-        color: red;
+        color: gold;
         font-size: 20px;
       }
     }
